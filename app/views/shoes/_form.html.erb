@@ -1,0 +1,32 @@
+<%= form_with(model: shoe) do |form| %>
+  <% if shoe.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(book.errors.count, "error") %> prohibited this book from being saved:</h2>
+
+      <ul>
+        <% shoe.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :brand, style: "display: block" %>
+    <%= form.text_field :brand %>
+  </div>
+
+  <div>
+    <%= form.label :title, style: "display: block" %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div>
+    <%= form.label :shoe_size, style: "display: block" %>
+    <%= form.number_field :shoe_size %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
